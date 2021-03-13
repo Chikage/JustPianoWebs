@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页菌</title>
+<script type="text/javascript">
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<style type="text/css">
+body {
+	background-image: url(../assets/drawable/welcome.png);
+}
+.path {
+	font-family: "Microsoft YaHei UI";
+	color: #FFF;
+	font-size: 16px;
+}
+.mode {
+	font-family: "Microsoft YaHei UI";
+	color: #FFF;
+	text-align: center;
+}
+.mode .mode {
+	text-align: center;
+}
+a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+#Layer5 {	position:absolute;
+	left:816px;
+	top:487px;
+	width:93px;
+	height:92px;
+	z-index:5;
+}
+</style>
+
+</head>
+</head>
+<embed src="../assets/sound/index_bgm.mp3" width="0" height="0" autostart="true" loop="true"></embed>
+<body onLoad="MM_preloadImages('../assets/drawable/local/local_onmouseover.png','../assets/drawable/online/online_onmouseover.png')">
+<span class="path">当前位置：<a href="main_mode.html" target="_self">主页</a></span>
+<DIV id=img1 style="Z-INDEX: 100; LEFT: 2px; WIDTH: 59px; POSITION: absolute; TOP: 43px; HEIGHT: 61px;
+ visibility: visible;"><a href="/jscss/" target="_blank"><img src="../assets/drawable/select.gif" width="212" height="32" border="0"></a></DIV>
+<SCRIPT>
+var xPos = 300;
+var yPos = 200; 
+var step = 1;
+var delay = 30; 
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 0;
+var xon = 0;
+var pause = true;
+var interval;
+img1.style.top = yPos;
+function changePos() 
+{
+	width = document.body.clientWidth;
+	height = document.body.clientHeight;
+	Hoffset = img1.offsetHeight;
+	Woffset = img1.offsetWidth;
+	img1.style.left = xPos + document.body.scrollLeft;
+	img1.style.top = yPos + document.body.scrollTop;
+	if (yon) 
+		{yPos = yPos + step;}
+	else 
+		{yPos = yPos - step;}
+	if (yPos < 0) 
+		{yon = 1;yPos = 0;}
+	if (yPos >= (height - Hoffset)) 
+		{yon = 0;yPos = (height - Hoffset);}
+	if (xon) 
+		{xPos = xPos + step;}
+	else 
+		{xPos = xPos - step;}
+	if (xPos < 0) 
+		{xon = 1;xPos = 0;}
+	if (xPos >= (width - Woffset)) 
+		{xon = 0;xPos = (width - Woffset);   }
+	}
+	
+	function start()
+	 {
+	 	img1.visibility = "visible";
+		interval = setInterval('changePos()', delay);
+	}
+	function pause_resume() 
+	{
+		if(pause) 
+		{
+			clearInterval(interval);
+			pause = false;}
+		else 
+		{
+			interval = setInterval('changePos()',delay);
+			pause = true; 
+			}
+		}
+	start();
+</SCRIPT>
+
+
+
+
+
+<table width="" height="100%" align="center">
+  <tr>
+　　 <td width="613">
+<div align="center"> 
+    <p></p>
+    <p></p>
+<table width="200" border="0">
+  <tr>
+    <td colspan="4"><img src="../assets/drawable/logo.png" width="300" height="80"></td>
+  </tr>
+  </table>
+
+  <table width="200" border="0">
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><span class="path"><img src="../assets/drawable/select.gif" alt="" width="212" height="32" align="absbottom"></span></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table width="" border="0">
+    <tr>
+      <td colspan="2" rowspan="4"><a href="playselect.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','../assets/drawable/local/local_onmouseover.png',1)"><img src="../assets/drawable/local/local.png" width="128" height="80" id="Image11"></a></td>
+      <td width="27" rowspan="4">&nbsp;</td>
+      <td colspan="2" rowspan="4"><a href="login.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image12','','../assets/drawable/online/online_onmouseover.png',1)"><img src="../assets/drawable/online/online.png" width="128" height="80" id="Image12"></a></td>
+      <td rowspan="3">&nbsp;</td>
+      <td height="69" rowspan="3"><img src="../assets/drawable/sound.png" width="64" height="64"></td>
+      <td width="96" height="21">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="21" class="mode">音源</td>
+      </tr>
+    <tr>
+      <td height="21">&nbsp;</td>
+    </tr>
+    <tr>
+      <td rowspan="3">&nbsp;</td>
+      <td height="66" rowspan="3"><img src="../assets/drawable/download.png" width="64" height="64"></td>
+      <td height="21">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="mode"><a href="playselect.html">本地弹奏</a></td>
+      <td height="21" class="mode">&nbsp;</td>
+      <td height="21" colspan="2" class="mode"><a href="login.asp">联网对战</a></td>
+      <td height="21" class="mode">皮肤</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="mode">&nbsp;</td>
+      <td height="21" class="mode">&nbsp;</td>
+      <td height="21" colspan="2" class="mode">&nbsp;</td>
+      <td height="21">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="67" rowspan="3"><a href="mainmode_about.html"><img src="../assets/drawable/main_mode_about.png" width="64" height="64"></a></td>
+      <td width="62">&nbsp;</td>
+      <td height="59" rowspan="3">&nbsp;</td>
+      <td width="65" rowspan="3"><div align="center"><img src="../assets/drawable/help.png" width="64" height="64"></div></td>
+      <td width="64" height="13">&nbsp;</td>
+      <td rowspan="3">&nbsp;</td>
+      <td height="59" rowspan="3"><img src="../assets/drawable/setting.png" width="64" height="64"></td>
+      <td height="21">&nbsp;</td>
+      </tr>
+    <tr>
+      <td width="62" class="mode"><a href="mainmode_about.html">说明</a></td>
+      <td height="21" class="mode">帮助</td>
+      <td height="21" class="mode">设置</td>
+    </tr>
+    <tr>
+      <td width="62">&nbsp;</td>
+      <td height="21">&nbsp;</td>
+      <td height="21">&nbsp;</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><a href="../action/rd_songs_info/rd_classic.asp"><img src="../assets/drawable/listen.png" width="64" height="64"></a></td>
+      <td>&nbsp;</td>
+      <td height="66" rowspan="3">&nbsp;</td>
+      <td height="66" rowspan="3"><img src="../assets/drawable/share.png" width="64" height="64"></td>
+      <td height="66" rowspan="3" class="mode">分享</td>
+      <td width="25" rowspan="3">&nbsp;</td>
+      <td width="64" height="66" rowspan="3" class="mode">评分</td>
+      <td rowspan="3" class="mode">反馈</td>
+      </tr>
+    <tr>
+      <td class="mode"><a href="../action/rd_songs_info/rd_classic.asp">欣赏</a><a href="../assets/drawable/listen.asp"></a></tr>
+    <tr>
+      <td height="21">&nbsp;</td>
+    </tr>
+    </table>
+  <p>&nbsp;</p>
+
+  
+
+ </div>
+　
+
+　</td>
+　　 </tr>
+　　 </table>
+
+
+</body>
+</html>
+
+</body>
+</html>
